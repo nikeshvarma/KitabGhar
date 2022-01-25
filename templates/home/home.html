@@ -1,0 +1,233 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div id="carouselExampleInterval" class="carousel slide mb-4" style="margin-top: 4.75rem;" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            {% for image in slider_images %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}" data-bs-interval="5000">
+                    <img src="{{ image.image.url }}" class="w-100" alt="{{ image.title }}">
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container my-3">
+        <h3 class="fw-bold " style="color: #7a6960">Latest Books</h3>
+        <hr/>
+        <div class="row gx-3 gy-2">
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/arthavyawstha.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Bharat Ki Rajvyavstha</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">Hindi, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/Chetanbhagat1.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">One Indian Girl</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">English, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/MissionNDA.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Mission NDA</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">English, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/Psycology.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Psychology Of Money</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">English, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/think_like_monk.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Think Like Monk</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">English, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-3">
+        <h3 class="fw-bold" style="color: #7a6960">Categories</h3>
+        <hr/>
+        <div class="row gx-3 gy-2 text-center">
+
+            <div class="col-md-2">
+                <div class="card card-body">
+                    Course Book
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-body">
+                    Novels
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-body">
+                    Biography
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-body">
+                    Comics
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-body">
+                    Reference Book
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-body">
+                    Romance
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container my-3">
+        <h3 class="fw-bold " style="color: #7a6960">Best Selling Books</h3>
+        <hr/>
+        <div class="row gx-3 gy-2">
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/Chetanbhagat1.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">One Indian Girl</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">English, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/arthavyawstha.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Bharat Ki Rajvyavstha</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">Hindi, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/Psycology.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Psychology Of Money</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">English, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/MissionNDA.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Mission NDA</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">English, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <img style="height: 350px;" src="{% static 'img/products/think_like_monk.jpeg' %}"
+                         class="card-img-top p-2" alt="book1"/>
+                    <div class="card-body">
+                        <h6 class="card-title fw-bold">Think Like Monk</h6>
+                        <div class="card-text">
+                            <p class="text-muted small">English, Peperback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Subscribe to our Newsletter to get more information on books</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+
+    <div class="d-flex justify-content-center" style="padding: 1rem;">
+        <div class="card shadow" style="width: 380px;">
+            <h1 class="text-center my-4 card-title" style="color: #7a6960;">LOGIN</h1>
+            <form class="row g-2 card-body" method="post" action="{% url 'login_user' %}">
+
+                {% csrf_token %}
+
+                <div class="col-12">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" name="email" required/>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-control" name="password" required/>
+                </div>
+
+                <input type="submit" value="LOGIN" class="mt-4 btn btn-success btn-lg"/>
+
+                <div class="col-6"></div>
+                <div class="col-6 text-end mt-4">
+                    <a href="{% url 'forgot_pass_request' %}">Forgot Password</a>
+                </div>
+
+                <div class="col-12 text-center my-3">
+                    Create New Account ? <a href="{% url 'signup_user' %}">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}
