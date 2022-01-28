@@ -58,6 +58,12 @@ def logout_user(request):
     return redirect('home_view')
 
 
+class ProfileView(TemplateView):
+    """ Display the profile of user """
+
+    template_name = 'account/profile.html'
+
+
 class ForgetPasswordRequestView(TemplateView):
     """ Initiate forget password process """
 

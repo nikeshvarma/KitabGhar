@@ -1,0 +1,90 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+
+    <div class="container-fluid container-md" style="margin-top: 6rem;">
+        <div class="row gx-3">
+
+            <div class="col-0 col-md-3 text-center">
+                <div class="card card-body">
+                    <h5 class="p-0 m-0">Hello <b>{{ user.name }}</b></h5>
+                </div>
+
+                <div class="card card-body mt-3">
+                    <a href="#">My Orders</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-9">
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                Personal Information
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                             aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <label for="email">Email</label>
+                                <input id="email" class="form-control" value="{{ user.email }}" type="email" name="email" disabled/>
+
+                                <label class="mt-3" for="name">Full Name</label>
+                                <input id="name" class="form-control" value="{{ user.name }}" type="text" name="name"/>
+
+                                <label class="mt-3" for="phone">Phone</label>
+                                <input id="phone" class="form-control" value="{{ user.phone }}" type="tel" name="phone"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                Address Information
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                             aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body">
+                                <div class="card card-body m-2" style="border-color: #0a58ca;">
+                                    <a href="#" style="padding: 0; margin: 0; color: #0a58ca;">+ Add New Address</a>
+                                </div>
+
+                                <hr/>
+
+                                <div class="card card-body m-2">
+                                    <p class="p-0 m-0">46, Gokuldham Colony, Burhanpur - 450331</p>
+                                </div>
+
+                                <div class="card card-body m-2">
+                                    <p class="p-0 m-0">103, Aman Plaza, Indore - 425001</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                Recent Orders
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                             aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body">
+                                <strong>No Recent Order</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
