@@ -26,6 +26,9 @@
 
 <body>
 
+<div id="loader" class="swiper-lazy-preloader">
+
+</div>
 
 {% block header %}
     {% include 'components/header.html' %}
@@ -55,6 +58,17 @@
 
 </body>
 
+<script>
+    document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader").style.visibility = "visible";
+        } else {
+            document.querySelector("#loader").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    }
+</script>
 
 <script src="{% static 'vendor/aos/aos.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

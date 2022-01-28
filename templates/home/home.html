@@ -7,7 +7,7 @@
         <div class="carousel-inner">
 
             {% for image in slider_images %}
-                <div class="carousel-item {% if forloop.first %} active {% endif %}" data-bs-interval="5000">
+                <div class="carousel-item {% if forloop.first %} active {% endif %}" data-bs-interval="4000">
                     <img src="{{ image.image.url }}" class="w-100" alt="{{ image.title }}">
                 </div>
             {% endfor %}
@@ -26,7 +26,7 @@
         </button>
     </div>
 
-    <div class="container my-3">
+    <div class="container my-3" data-aos="fade-up" data-aos-delay="100">
         <h3 class="fw-bold " style="color: #7a6960">Latest Books</h3>
         <hr/>
         <div class="row gx-3 gy-2">
@@ -99,7 +99,7 @@
     </div>
 
 
-    <div class="container my-3">
+    <div class="container my-3" data-aos="fade-up" data-aos-delay="150">
         <h3 class="fw-bold" style="color: #7a6960">Categories</h3>
         <hr/>
         <div class="row gx-3 gy-2 text-center">
@@ -141,9 +141,12 @@
             </div>
         </div>
     </div>
+
+    <div class="container" id="ad-1" data-aos="fade-up" data-aos-delay="200">
+        <img class="w-100" src="{% static 'img/products/ad1.jpg' %}" alt="ad-1"/>
     </div>
 
-    <div class="container my-3">
+    <div class="container my-3" data-aos="fade-up" data-aos-delay="250">
         <h3 class="fw-bold " style="color: #7a6960">Best Selling Books</h3>
         <hr/>
         <div class="row gx-3 gy-2">
@@ -215,7 +218,7 @@
         </div>
     </div>
 
-    <footer id="footer">
+    <footer id="footer" data-aos="fade-up" data-aos-delay="275">
         <div class="footer-newsletter">
             <div class="container">
                 <div class="row justify-content-center">

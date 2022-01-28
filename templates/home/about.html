@@ -1,0 +1,41 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="row justify-content-between">
+                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
+                    <img src="{% static 'img/about-img.svg' %}" class="img-fluid" alt="" data-aos="zoom-in">
+                </div>
+                <div class="col-lg-6 pt-5 pt-lg-0">
+                    <h3 data-aos="fade-up">KitabGhar is an online book selling store</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">
+                        Books are a treasure trove of knowledge. It is essential to inculcate reading habits from an early age to
+                        develop vocabulary and imaginative skills. Whether you are looking for storybooks for kids, novels for
+                        grown-ups, study material for education, preparatory books for competitive exams, or copies related to art and
+                        craft, you can browse and explore a wide range of options available at online bookstores. <br/><br/> Discover the magic of
+                        literature available in a plethora of international languages like English, Spanish, French, German, Japanese,
+                        Korean, Russian, Arabic, Latin, Yiddish or regional languages like Hindi, Kannada, Malayalam, Marathi,
+                        Gujarati, Tamil, and more. Explore the collection and shop for books online during the Big Billion Days.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <i class="bx bx-receipt"></i>
+                            <h4>Large verities of book</h4>
+                            <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bx bx-cube-alt"></i>
+                            <h4>Global publication available</h4>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
