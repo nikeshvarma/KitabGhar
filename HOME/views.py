@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from .models import SliderImages
+from PRODUCT.models import Product
 
 
 class HomeView(TemplateView):
@@ -8,6 +9,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['slider_images'] = SliderImages.objects.all()
+        context['latest_books'] = Product.objects.all().order_by('-id')[:5]
         return context
 
 

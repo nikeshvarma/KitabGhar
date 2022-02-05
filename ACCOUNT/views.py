@@ -22,12 +22,13 @@ class SignUpUserView(CreateView):
     def post(self, request, *args, **kwargs):
 
         if not User.objects.filter(email=request.POST.get('email')).exists():
-            User.objects.create(
+            user = User.objects.create(
                 name=request.POST.get('name'),
                 email=request.POST.get('email'),
                 phone=request.POST.get('phone'),
                 password=make_password(request.POST.get('password'))
             )
+            login(request, user)
             return redirect('home_view')
 
         else:

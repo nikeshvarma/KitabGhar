@@ -3,7 +3,7 @@ from django.db import models
 
 
 def get_image_path(instance, filename):
-    return '{0}/{1}'.format(instance.category, filename)
+    return 'ProductImages/{0}/{1}'.format(instance.product.category, filename)
 
 
 class ProductCategory(models.Model):
@@ -15,6 +15,12 @@ class ProductCategory(models.Model):
         ('Biography', 'Biography')
     ]
     category = models.CharField(choices=CATEGORY, max_length=20)
+
+    def __str__(self):
+        return self.category
+
+    class Meta:
+        verbose_name_plural = 'Product Categories'
 
 
 class Product(models.Model):
@@ -32,8 +38,17 @@ class Product(models.Model):
     out_of_stock = models.BooleanField(default=False)
     description = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_image')
     image = models.ImageField(upload_to=get_image_path)
     make_cover_image = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.image.name
+
+    def cover_image(self):
+        return self.objects.get(make_cover_image=True)

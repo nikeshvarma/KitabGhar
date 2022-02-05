@@ -1,17 +1,16 @@
 {% extends 'components/base.html' %}
 {% load static %}
+{% load customtags %}
 
 {% block content %}
 
     <div id="carouselExampleInterval" class="carousel slide mb-4" style="margin-top: 4.75rem;" data-bs-ride="carousel">
         <div class="carousel-inner">
-
             {% for image in slider_images %}
                 <div class="carousel-item {% if forloop.first %} active {% endif %}" data-bs-interval="4000">
                     <img src="{{ image.image.url }}" class="w-100" alt="{{ image.title }}">
                 </div>
             {% endfor %}
-
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
@@ -31,70 +30,21 @@
         <hr/>
         <div class="row gx-3 gy-2">
 
-            <div class="col-md">
-                <div class="card">
-                    <img style="height: 350px;" src="{% static 'img/products/arthavyawstha.jpeg' %}"
-                         class="card-img-top p-2" alt="book1"/>
-                    <div class="card-body">
-                        <h6 class="card-title fw-bold">Bharat Ki Rajvyavstha</h6>
-                        <div class="card-text">
-                            <p class="text-muted small">Hindi, Peperback</p>
+            {% for book in latest_books %}
+                <div class="col-md">
+                    <div class="card">
+                        <img style="height: 350px;" src="{{ book.product_image.all|cover_image }}" class="card-img-top p-2"
+                             alt="book1"/>
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">{{ book.name }}</h6>
+                            <div class="card-text">
+                                <p class="text-muted small">English, {{ book.type }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
 
-            <div class="col-md">
-                <div class="card">
-                    <img style="height: 350px;" src="{% static 'img/products/Chetanbhagat1.jpeg' %}"
-                         class="card-img-top p-2" alt="book1"/>
-                    <div class="card-body">
-                        <h6 class="card-title fw-bold">One Indian Girl</h6>
-                        <div class="card-text">
-                            <p class="text-muted small">English, Peperback</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md">
-                <div class="card">
-                    <img style="height: 350px;" src="{% static 'img/products/MissionNDA.jpeg' %}"
-                         class="card-img-top p-2" alt="book1"/>
-                    <div class="card-body">
-                        <h6 class="card-title fw-bold">Mission NDA</h6>
-                        <div class="card-text">
-                            <p class="text-muted small">English, Peperback</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md">
-                <div class="card">
-                    <img style="height: 350px;" src="{% static 'img/products/Psycology.jpeg' %}"
-                         class="card-img-top p-2" alt="book1"/>
-                    <div class="card-body">
-                        <h6 class="card-title fw-bold">Psychology Of Money</h6>
-                        <div class="card-text">
-                            <p class="text-muted small">English, Peperback</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md">
-                <div class="card">
-                    <img style="height: 350px;" src="{% static 'img/products/think_like_monk.jpeg' %}"
-                         class="card-img-top p-2" alt="book1"/>
-                    <div class="card-body">
-                        <h6 class="card-title fw-bold">Think Like Monk</h6>
-                        <div class="card-text">
-                            <p class="text-muted small">English, Peperback</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 

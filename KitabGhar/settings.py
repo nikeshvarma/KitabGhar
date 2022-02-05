@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -55,8 +54,6 @@ ROOT_URLCONF = 'KitabGhar.urls'
 
 # Custom User Model
 AUTH_USER_MODEL = 'ACCOUNT.AuthUser'
-
-SITE_ID = 1
 
 TEMPLATES = [
     {
