@@ -1,0 +1,37 @@
+{% extends 'components/base.html' %}
+{% load customtags %}
+
+{% block content %}
+    <div class="container">
+        <div>
+            {% if object_list|length > 0 %}
+
+                <div class="text-center" style="margin-top: 120px; margin-bottom: 50px;">
+                    <h1>Search Result</h1>
+                </div>
+
+                <div class="row gx-3 gy-2" data-aos="fade-up" data-aos-delay="100">
+                    {% for book in object_list %}
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img style="height: 350px;" src="{{ book.product_image.all|cover_image }}" class="card-img-top p-2"
+                                     alt="book1"/>
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold">{{ book.name }}</h6>
+                                    <div class="card-text">
+                                        <p class="text-muted small">English, {{ book.type }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            {% else %}
+                <div class="text-center" style="margin: 190px 0 100px 0;">
+                    <span class="display-1">No Result Found</span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

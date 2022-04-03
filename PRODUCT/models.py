@@ -12,7 +12,8 @@ class ProductCategory(models.Model):
         ('Novel', 'Novel'),
         ('Comics', 'Comics'),
         ('Story_Book', 'Story Book'),
-        ('Biography', 'Biography')
+        ('Biography', 'Biography'),
+        ('Love_Story', 'Love Story')
     ]
     category = models.CharField(choices=CATEGORY, max_length=20)
 

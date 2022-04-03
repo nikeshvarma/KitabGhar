@@ -29,12 +29,10 @@
         <h3 class="fw-bold " style="color: #7a6960">Latest Books</h3>
         <hr/>
         <div class="row gx-3 gy-2">
-
             {% for book in latest_books %}
                 <div class="col-md">
                     <div class="card">
-                        <img style="height: 350px;" src="{{ book.product_image.all|cover_image }}" class="card-img-top p-2"
-                             alt="book1"/>
+                        <img style="height: 350px;" src="{{ book.product_image.all|cover_image }}" class="card-img-top p-2" alt="book1"/>
                         <div class="card-body">
                             <h6 class="card-title fw-bold">{{ book.name }}</h6>
                             <div class="card-text">
@@ -44,7 +42,6 @@
                     </div>
                 </div>
             {% endfor %}
-
         </div>
     </div>
 
@@ -55,39 +52,39 @@
         <div class="row gx-3 gy-2 text-center">
 
             <div class="col-md-2">
-                <div class="card card-body">
+                <a class="card card-body" href="{% url 'product_category_view' 'Course_Book' %}">
                     Course Book
-                </div>
+                </a>
             </div>
 
             <div class="col-md-2">
-                <div class="card card-body">
+                <a class="card card-body" href="{% url 'product_category_view' 'Novel' %}">
                     Novels
-                </div>
+                </a>
             </div>
 
             <div class="col-md-2">
-                <div class="card card-body">
+                <a class="card card-body" href="{% url 'product_category_view' 'Biography' %}">
                     Biography
-                </div>
+                </a>
             </div>
 
             <div class="col-md-2">
-                <div class="card card-body">
+                <a class="card card-body" href="{% url 'product_category_view' 'Comics' %}">
                     Comics
-                </div>
+                </a>
             </div>
 
             <div class="col-md-2">
-                <div class="card card-body">
+                <a class="card card-body" href="{% url 'product_category_view' 'Reference_Book' %}">
                     Reference Book
-                </div>
+                </a>
             </div>
 
             <div class="col-md-2">
-                <div class="card card-body">
+                <a class="card card-body" href="{% url 'product_category_view' 'Love_Story' %}">
                     Romance
-                </div>
+                </a>
             </div>
         </div>
     </div>
