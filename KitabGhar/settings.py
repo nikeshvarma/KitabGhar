@@ -137,3 +137,13 @@ EMAIL_HOST_PASSWORD = 'nikesh08@'
 EMAIL_PORT = 587
 
 APPEND_SLASH = False
+
+# PayTM Setup
+Paytm_Merchant_ID = 'wuozEn97922111650508'
+Paytm_Merchant_Key = 'N&dcG8knGh@AU307'
+Paytm_Website = 'WEBSTAGING'
+Paytm_Industry_Type = 'Retail'
+Paytm_Channel_ID = 'WEB'
+Paytm_Client_ID = ''
+Paytm_Callback_URL = ''
+

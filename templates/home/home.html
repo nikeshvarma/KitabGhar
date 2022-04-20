@@ -32,13 +32,16 @@
             {% for book in latest_books %}
                 <div class="col-md">
                     <div class="card">
-                        <img style="height: 350px;" src="{{ book.product_image.all|cover_image }}" class="card-img-top p-2" alt="book1"/>
-                        <div class="card-body">
-                            <h6 class="card-title fw-bold">{{ book.name }}</h6>
-                            <div class="card-text">
-                                <p class="text-muted small">English, {{ book.type }}</p>
+                        <a href="{% url 'product_detail_view' book.pk %}">
+                            <img style="height: 350px;" src="{{ book.product_image.all|cover_image }}" class="card-img-top p-2"
+                                 alt="book1"/>
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">{{ book.name }}</h6>
+                                <div class="card-text">
+                                    <p class="text-muted small">English, {{ book.type }}</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             {% endfor %}

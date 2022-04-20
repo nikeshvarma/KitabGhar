@@ -11,7 +11,6 @@
                 <li class="dropdown">
                     <a href="#"><span>Category</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Action & Adventure</a></li>
                         <li class="dropdown"><a href="#"><span>Course Books</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="#">Engineering Books</a></li>
@@ -20,10 +19,10 @@
                                 <li><a href="#">Laws Books</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Fiction</a></li>
-                        <li><a href="#">Novel</a></li>
-                        <li><a href="#">Biography</a></li>
+                        <li><a href="{% url 'product_category_view' 'Novel' %}">Novel</a></li>
+                        <li><a href="{% url 'product_category_view' 'Comics' %}">Comics</a></li>
+                        <li><a href="{% url 'product_category_view' 'Story_Book' %}">Story Book</a></li>
+                        <li><a href="{% url 'product_category_view' 'Biography' %}">Biography</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link" href="{% url 'about_view' %}">About Us</a></li>
