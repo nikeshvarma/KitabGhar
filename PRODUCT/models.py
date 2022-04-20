@@ -26,7 +26,7 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     BOOK_TYPE = [
-        ('Peperback', 'Peperback'),
+        ('Paperback', 'Paperback'),
         ('Soft_Copy', 'Soft Copy')
     ]
 
